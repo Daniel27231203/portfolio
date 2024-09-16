@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Playfair_Display } from "next/font/google";
 import "./globals.scss";
 
 const geistSans = localFont({
@@ -17,6 +18,13 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const geistPlayfair = localFont({
+  src: "./fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf",
+  variable: "--font-Playfair-Display",
+  weight: "100 900",
+});
+
+const playFi = Playfair_Display({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -31,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserratSans.variable} ${geistMono.variable} ${geistSans.variable}`}
+        className={`${montserratSans.variable} ${geistMono.variable} ${geistSans.variable} ${geistPlayfair.variable} ${playFi.className}`}
       >
         {children}
       </body>

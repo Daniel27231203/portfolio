@@ -1,0 +1,13 @@
+.BurgerButton {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  .content {
+    .burgerBtn {
+      border: none;
+      color: black;
+      font-size: 25px;
+    }
+  }
+}

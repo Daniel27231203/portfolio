@@ -1,11 +1,11 @@
 import { useHeaderStore } from "@/stores/useHeaderStore";
 import scss from "./BurgerMenu.module.scss";
 import { links } from "@/constans/link";
-import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll";
 import { FaFile } from "react-icons/fa";
 
 const BurgerMenu = () => {
-  const { isOpen, setIsOpen } = useHeaderStore();
+  const { isOpen, setIsOpen, fixScroll } = useHeaderStore();
 
   return (
     <div
@@ -16,9 +16,18 @@ const BurgerMenu = () => {
           <ul>
             {links.map((el, index) => (
               <li key={index}>
-                <Link href={el.href}>
+                <ScrollLink
+                  onClick={fixScroll}
+                  className={scss.link}
+                  to={el.to}
+                  spy={el.spy}
+                  smooth={el.smooth}
+                  offset={-100}
+                  duration={el.duration}
+                  activeClass={scss.active}
+                >
                   {el.icon} {el.name}
-                </Link>
+                </ScrollLink>
               </li>
             ))}
           </ul>

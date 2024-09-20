@@ -4,10 +4,17 @@ interface IHeaderStore {
   isOpen: Boolean;
 
   setIsOpen: (value: boolean) => void;
+
+  fixScroll: () => void;
 }
 
 export const useHeaderStore = create<IHeaderStore>((set) => ({
   isOpen: false,
 
   setIsOpen: (value) => set({ isOpen: value }),
+  fixScroll: () => {
+    setTimeout(() => {
+      window.scrollBy(0, 1);
+    }, 100);
+  },
 }));

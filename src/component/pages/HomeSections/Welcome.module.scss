@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Sofadi+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap");
+
+.Welcome {
+  padding: 20px 0;
+  height: 90vh;
+  background: rgb(238, 230, 230);
+  transition: 0.5s;
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h2 {
+      font-family: "Inria Sans", sans-serif;
+    }
+    .titleBox {
+      display: flex;
+      align-items: center;
+      button {
+        padding: 10px;
+        background: black;
+        color: white;
+      }
+      .left {
+        border-radius: 15px 0 0 15px;
+      }
+      .right {
+        border-radius: 0 15px 15px 0;
+      }
+      .activeBtn {
+        background: white;
+        color: black;
+      }
+    }
+  }
+  .content {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .box {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      .profilImage {
+        width: 150px;
+        height: auto;
+        border-radius: 10px;
+      }
+      .block {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        .blockTitle {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          h1 {
+            font-size: 45px;
+            font-weight: 1000;
+            width: 650px;
+            font-family: "san-serif";
+            color: black;
+            letter-spacing: 3px;
+          }
+          .imageClass {
+            width: 50px;
+            height: auto;
+            border-radius: 50%;
+            display: none;
+          }
+        }
+
+        p {
+          width: 800px;
+          color: gray;
+          font-weight: 700;
+          font-family: "Inria Sans", sans-serif;
+        }
+        h3 {
+          span {
+            position: relative;
+            color: darkgoldenrod;
+            font-family: "Sofadi One", system-ui;
+
+            &::before {
+              content: "Каждый день — это новый шанс стать лучше.";
+              animation: words 20s infinite;
+            }
+            &::after {
+              content: "";
+              position: absolute;
+              animation: cursor 0.6s infinite;
+            }
+          }
+        }
+
+        button {
+          cursor: pointer;
+          padding: 15px 50px;
+          background: rgb(36, 78, 99);
+          color: white;
+          border-radius: 10px;
+          font-size: 25px;
+        }
+      }
+    }
+    .btnCloseAbout {
+      position: absolute;
+      bottom: 20px;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+      cursor: pointer;
+      background: rgb(36, 78, 99);
+      color: white;
+      border-radius: 50%;
+      padding: 10px;
+      transition: 0.5s;
+      &:hover {
+        background: white;
+        color: rgb(36, 78, 99);
+      }
+    }
+  }
+}
+.close {
+  height: 20px;
+  transition: 0.5s;
+  .title {
+    display: none;
+  }
+  .content {
+    display: none;
+  }
+  .btnSwipe {
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    cursor: pointer;
+    background: rgb(36, 78, 99);
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    transition: 0.5s;
+    &:hover {
+      background: white;
+      color: rgb(36, 78, 99);
+    }
+  }
+}
+
+@keyframes cursor {
+  to {
+    border-left: 3px solid black;
+  }
+}
+
+@keyframes words {
+  0%,
+  20% {
+    content: "Действуй сегодня, чтобы изменить завтра.";
+  }
+  21%,
+  40% {
+    content: "Act today to change tomorrow.";
+  }
+  41%,
+  60% {
+    content: "Мечты становятся реальностью, если верить и идти вперёд.";
+  }
+  61%,
+  80% {
+    content: "Dreams become reality if you believe and move forward.";
+  }
+  81%,
+  100% {
+    content: "Every day is a new chance to become better.";
+  }
+}
+
+@media (max-width: 1200px) {
+  .block {
+    .blockTitle {
+      h1 {
+        font-size: 25px;
+        font-weight: 800;
+        width: 400px;
+      }
+    }
+
+    p {
+      width: 600px;
+      font-weight: 700;
+    }
+  }
+}
+@media (max-width: 900px) {
+  .Welcome {
+    padding: 20px 0;
+    height: 90vh;
+    background: rgb(238, 230, 230);
+    transition: 0.5s;
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      h2 {
+        font-family: "Inria Sans", sans-serif;
+      }
+    }
+
+    .content {
+      .box {
+        .block {
+          .blockTitle {
+            h1 {
+              font-size: 25px;
+              font-weight: 800;
+              width: 300px;
+            }
+          }
+          p {
+            width: 400px;
+            font-weight: 700;
+            font-size: 15px;
+          }
+          h3 {
+            width: 400px;
+            span {
+              font-family: 10px;
+
+              &::before {
+                content: "Каждый день — это новый шанс стать лучше.";
+                animation: words 20s infinite;
+              }
+              &::after {
+                content: "";
+                position: absolute;
+                animation: cursor 0.6s infinite;
+              }
+            }
+          }
+          button {
+            padding: 10px 30px;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 750px) {
+  .Welcome {
+    .content {
+      .box {
+        .profilImage {
+          display: none;
+        }
+        .block {
+          .blockTitle {
+            .imageClass {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 550px) {
+  .Welcome {
+    .content {
+      .box {
+        .profilImage {
+          display: none;
+        }
+        .block {
+          .blockTitle {
+            h1 {
+              font-size: 20px;
+              width: 200px;
+            }
+          }
+          p {
+            width: 300px;
+            font-size: 10px;
+          }
+          h3 {
+            width: 300px;
+          }
+        }
+      }
+      .btnCloseAbout {
+        font-size: 10px;
+        padding: 10px;
+      }
+    }
+  }
+  .close {
+    .btnSwipe {
+      font-size: 10px;
+      padding: 10px;
+    }
+  }
+}
+@media (max-width: 420px) {
+  .Welcome {
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      h2 {
+        font-size: 15px;
+      }
+      .titleBox {
+        button {
+          padding: 5px;
+          background: black;
+          color: white;
+          font-size: 10px;
+        }
+      }
+    }
+    .content {
+      .box {
+        .block {
+          .blockTitle {
+            display: flex;
+            gap: 2px;
+          }
+          p {
+            width: 200px;
+            font-size: 10px;
+          }
+          h3 {
+            font-size: 10px;
+            width: 200px;
+          }
+          button {
+            padding: 5px 15px;
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+}

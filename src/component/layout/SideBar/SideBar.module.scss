@@ -1,0 +1,32 @@
+.SideBar {
+  width: 40px;
+  position: fixed;
+  top: 40%;
+  left: 0;
+  background: white;
+  border-radius: 10px;
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px 0;
+    a {
+      font-size: 35px;
+      &:hover {
+        transform: scale(1) translateY(-3px);
+        color: purple;
+      }
+      svg {
+        background: transparent;
+        color: black;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .SideBar {
+    display: none;
+  }
+}

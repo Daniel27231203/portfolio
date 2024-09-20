@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap");
 
 .Header {
   position: sticky;
@@ -8,6 +9,7 @@
   box-shadow: 0px 9px 25px -15px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 9px 25px -15px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 9px 25px -15px rgba(0, 0, 0, 0.75);
+  z-index: 1;
   .content {
     position: relative;
     display: flex;
@@ -15,6 +17,7 @@
     justify-content: space-between;
     .left {
       .logo {
+        cursor: pointer;
         a {
           display: flex;
           justify-content: center;
@@ -28,7 +31,7 @@
             margin-top: 8px;
             margin-left: -9px;
             color: rgb(36, 78, 99);
-            font-family: "Playfair Display", serif;
+            font-family: "Sofadi One", system-ui;
           }
         }
       }
@@ -43,7 +46,7 @@
           align-items: center;
           gap: 25px;
           li {
-            a {
+            .link {
               display: flex;
               align-items: center;
               gap: 5px;
@@ -53,7 +56,12 @@
               font-family: "Playfair Display";
               font-weight: 700;
               letter-spacing: 1px;
+              cursor: pointer;
               &:hover {
+                color: black;
+                text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
+              }
+              &.active {
                 color: black;
                 text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
               }

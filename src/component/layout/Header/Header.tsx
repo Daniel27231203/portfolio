@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import scss from "./Header.module.scss";
 import { links } from "@/constans/link";
 import { useEffect, useRef, useState } from "react";
@@ -9,10 +8,14 @@ import Logo from "../../../assets/My-Logo.png";
 import Image from "next/image";
 import gsap from "gsap";
 import { FaFile } from "react-icons/fa";
+import { Link as ScrollLink } from "react-scroll";
+import { useHeaderStore } from "@/stores/useHeaderStore";
+
 const Header = () => {
   const headerRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(true);
   const [logoAnimation, setLogoAnimation] = useState(false);
+  const { fixScroll } = useHeaderStore();
 
   const changeIsMobile = () => {
     setIsMobile(window.innerWidth <= 768);
@@ -49,20 +52,24 @@ const Header = () => {
         <div className={scss.content}>
           <div className={scss.left}>
             <div className={scss.logo}>
-              <Link
+              <ScrollLink
+                to="home"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
                 onMouseOver={() => {
                   setLogoAnimation(true);
                 }}
                 onMouseOut={() => {
                   setLogoAnimation(false);
                 }}
-                href="/"
               >
                 <Image src={Logo} alt="logo" />
                 {logoAnimation || isMobile ? (
                   <h1 ref={headerRef}>ani dev</h1>
                 ) : null}
-              </Link>
+              </ScrollLink>
             </div>
           </div>
           <div className={scss.right}>
@@ -72,9 +79,18 @@ const Header = () => {
                   <ul>
                     {links.map((el) => (
                       <li key={el.name}>
-                        <Link href={el.href}>
+                        <ScrollLink
+                          onClick={fixScroll}
+                          className={scss.link}
+                          to={el.to}
+                          spy={el.spy}
+                          smooth={el.smooth}
+                          offset={el.offset}
+                          duration={el.duration}
+                          activeClass={scss.active}
+                        >
                           {el.icon} {el.name}
-                        </Link>
+                        </ScrollLink>
                       </li>
                     ))}
                   </ul>

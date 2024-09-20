@@ -1,7 +1,6 @@
 import { useHeaderStore } from "@/stores/useHeaderStore";
 import scss from "./BurgerButton.module.scss";
 import { IoMenu } from "react-icons/io5";
-import { useState } from "react";
 import { IoClose } from "react-icons/io5";
 
 const BurgerButton = () => {

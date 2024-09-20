@@ -5,7 +5,7 @@ import { Link as ScrollLink } from "react-scroll";
 import { FaFile } from "react-icons/fa";
 
 const BurgerMenu = () => {
-  const { isOpen, setIsOpen, fixScroll } = useHeaderStore();
+  const { isOpen, fixScroll } = useHeaderStore();
 
   return (
     <div

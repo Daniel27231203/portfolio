@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 interface IHeaderStore {
-  isOpen: Boolean;
+  isOpen: boolean;
 
   setIsOpen: (value: boolean) => void;
 
